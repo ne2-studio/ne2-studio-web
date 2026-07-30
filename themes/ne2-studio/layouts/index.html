@@ -1,22 +1,306 @@
-{{ define "nav-items" }}
-  {{- partial "navbar.html" . -}}
-{{ end }}
-
 {{ define "main" }}
-<header class="video-header">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-12 text-center">
-        <h1 class="super-big">Ne2 Studio</h1>
-      </div>
+<main class="home-page">
+  <header class="home-header" id="top">
+    <div class="home-shell home-header__inner">
+      <a class="home-logo" href="/" aria-label="Ne2 Studio">
+        <img class="home-logo__mark" src="/assets/img/homepage/logo-mark.svg" alt="" width="63" height="32">
+        <img class="home-logo__text" src="/assets/img/homepage/logo-text.svg" alt="Ne2 Studio" width="79" height="23">
+      </a>
+      <a class="home-header__button" href="#dos-disciplinas">Empezar historia</a>
+    </div>
+  </header>
+
+  <section class="home-hero" id="historia">
+    <div class="home-shell home-hero__inner">
+      <h1>Construimos productos digitales <span>que nos gustaría</span> que existieran.</h1>
+      <p class="home-hero__lead">Ne² Studio nació de una idea muy sencilla. Nos gusta trabajar juntos.</p>
+    </div>
+  </section>
+
+  <div class="home-marquee" aria-label="Temas de Ne2 Studio">
+    <div class="home-marquee__track">
+      <span>Diseño de producto</span>
+      <span>Desarrollo de software</span>
+      <span>Laboratorio</span>
+      <span>Experimentos</span>
+      <span>Conversaciones</span>
+      <span>Aprendizaje continuo</span>
+      <span>Ideas demasiado interesantes</span>
+      <span aria-hidden="true">Diseño de producto</span>
+      <span aria-hidden="true">Desarrollo de software</span>
+      <span aria-hidden="true">Laboratorio</span>
+      <span aria-hidden="true">Experimentos</span>
+      <span aria-hidden="true">Conversaciones</span>
+      <span aria-hidden="true">Aprendizaje continuo</span>
+      <span aria-hidden="true">Ideas demasiado interesantes</span>
     </div>
   </div>
-</header>
 
-<section id="sect-body">
-  <div class="container">
-    <article>{{ .Content }}</article>
-  </div>
-</section>
+  <section class="home-section home-section--split" id="dos-disciplinas">
+    <div class="home-shell home-split home-split--intro">
+      <div>
+        <p class="home-eyebrow">Dos disciplinas que se necesitan: ingeniería y diseño.</p>
+        <h2 class="home-intro-title">
+          <span class="home-white">Pedro es</span> desarrollador de software<span class="home-white">.</span>
+          <span class="home-break home-white">Jaime es</span> diseñador de producto<span class="home-white">.</span>
+        </h2>
+      </div>
+      <div class="home-people">
+        <article class="home-person">
+          <div>
+            <h3>Pedro</h3>
+            <p>Ingeniería. Construcción. Calidad.</p>
+          </div>
+          <ul class="home-tags" aria-label="Áreas de Pedro">
+            <li>Software</li>
+            <li>Sistemas</li>
+            <li>Producto</li>
+            <li>Negocio</li>
+          </ul>
+          <figure class="home-person__photo">
+            <img src="/assets/img/homepage/pedro.jpg" alt="Pedro" width="360" height="387">
+          </figure>
+        </article>
+        <article class="home-person">
+          <div>
+            <h3>Jaime</h3>
+            <p>Forma. Lore. Alma.</p>
+          </div>
+          <ul class="home-tags" aria-label="Áreas de Jaime">
+            <li>Producto</li>
+            <li>Identidad</li>
+            <li>Diseño</li>
+            <li>Marca</li>
+          </ul>
+          <figure class="home-person__photo">
+            <img src="/assets/img/homepage/jaime.jpg" alt="Jaime" width="360" height="387">
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
 
+  <section class="home-section home-section--panel">
+    <div class="home-shell home-split home-split--origins">
+      <div>
+        <h2>Por separado <span>llevamos años</span> construyendo cosas.</h2>
+        <p class="home-large-copy home-large-copy--gloock">Pero siempre <span>sentíamos que faltaba algo</span>.</p>
+      </div>
+      <aside>
+        <div class="home-duo-card">
+          <article>
+            <p class="home-label">A Jaime</p>
+            <h3>le sobraban<br>ideas</h3>
+            <p>y le faltaban manos para convertirlas en realidad.</p>
+          </article>
+          <article>
+            <p class="home-label">A Pedro</p>
+            <h3>le sobraban ganas de construir</h3>
+            <p>y le faltaba alguien capaz de dar forma, identidad y alma a los productos.</p>
+          </article>
+        </div>
+        <p class="home-note">Dos trayectorias paralelas que, miradas de cerca, dejaban ver el mismo hueco en lados opuestos.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="home-section home-section--statement">
+    <div class="home-shell">
+      <h2>Así que decidimos <span>dejar de esperar</span> a que apareciera el proyecto perfecto.</h2>
+      <p><span aria-hidden="true">→</span><strong>Y nos inventamos el nuestro.</strong></p>
+    </div>
+  </section>
+
+  <section class="home-quote">
+    <blockquote><span>“</span>Un laboratorio para aprender, experimentar y crear<span>.”</span></blockquote>
+  </section>
+
+  <section class="home-section">
+    <div class="home-shell home-split">
+      <div>
+        <h2>Ne² Studio es <span>nuestro rincón</span> de Internet.</h2>
+        <p class="home-large-copy home-place-copy">Un lugar donde exploramos ideas, construimos productos y aprendemos cosas nuevas.</p>
+      </div>
+      <div class="home-origin-grid">
+        <article>
+          <p>01</p>
+          <h3>De problemas propios</h3>
+          <span>Algunos nacen de problemas que vivimos nosotros mismos.</span>
+        </article>
+        <article>
+          <p>02</p>
+          <h3>De conversaciones</h3>
+          <span>Otros surgen de conversaciones con amigos, clientes o personas cercanas.</span>
+        </article>
+        <article>
+          <p>03</p>
+          <h3>De una chispa</h3>
+          <span>Y otros aparecen simplemente porque una idea nos parece demasiado interesante como para dejarla escapar.</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-section--texture">
+    <div class="home-shell home-split home-split--wide home-split--rules">
+      <h2>Tres cosas que <span>no</span> nos definen.</h2>
+      <ol class="home-rule-list">
+        <li><span>01</span><del>No seguimos tendencias.</del></li>
+        <li><span>02</span><del>No perseguimos categorías concretas.</del></li>
+        <li><span>03</span><del>No nos importa demasiado si algo es IA, SaaS, una aplicación móvil o una herramienta para un nicho diminuto.</del></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="home-shell home-split">
+      <div>
+        <h2><span>Nos importa</span> que sea útil.</h2>
+        <p class="home-large-copy home-criteria-copy">Cuatro criterios sencillos que aplicamos a todo lo que construimos.</p>
+      </div>
+      <div class="home-criteria">
+        <article><span>01</span><strong>Útil</strong></article>
+        <article><span>02</span><strong>Personalidad</strong></article>
+        <article><span>03</span><strong>Elegancia</strong></article>
+        <article><span>04</span><strong>Existir</strong></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-section--work">
+    <div class="home-shell home-split">
+      <div>
+        <h2>Cómo trabajamos</h2>
+        <p class="home-large-copy home-work-copy">Creemos en aprender haciendo. Nos gusta construir rápido, probar, observar y mejorar.</p>
+        <figure class="home-workshop">
+          <img src="/assets/img/homepage/workshop.jpg" alt="Taller de Ne2 Studio" width="378" height="224">
+        </figure>
+      </div>
+      <div class="home-workflow">
+        <article>
+          <p class="home-label">Preferimos</p>
+          <h3>Preferimos <span>una versión imperfecta funcionando hoy</span> que una presentación perfecta dentro de tres meses.</h3>
+        </article>
+        <div class="home-values">
+          <p class="home-label">Valoramos por encima de todo</p>
+          <div class="home-values__box">
+            <div><strong>Simplicidad</strong><span>vs</span><del>Complejidad</del></div>
+            <div><strong>Atención al detalle</strong><span>vs</span><del>Prisas</del></div>
+            <div><strong>Datos</strong><span>vs</span><del>Opiniones</del></div>
+          </div>
+        </div>
+        <p class="home-note home-note--center">“Aunque, siendo sinceros, muchas veces empezamos proyectos simplemente porque algo nos parecía divertido.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-section--experiments">
+    <div class="home-shell home-split">
+      <div>
+        <h2>Algunos de nuestros <span>experimentos</span>.</h2>
+        <p class="home-large-copy home-experiments-copy">Cada producto que construimos es una excusa para aprender algo nuevo.</p>
+      </div>
+      <div class="home-experiments">
+        <div class="home-learning">
+          <p>Una nueva <span>tecnología</span>.</p>
+          <p>Una nueva <span>habilidad</span>.</p>
+          <p>Una nueva forma de <span>entender a las personas</span> que lo utilizan.</p>
+        </div>
+        <div class="home-stats">
+          <article><strong>∞</strong><span>Ideas en cola</span></article>
+          <article><strong>03</strong><span>Sources</span></article>
+          <article><strong>2</strong><span>Nenes</span></article>
+        </div>
+        <div class="home-products">
+          <article>
+            <img src="/assets/img/homepage/product-reforge.png" alt="Mockup de Reforge" width="904" height="904">
+            <div>
+              <span>En construcción</span>
+              <small>Aplicación · Utilidad</small>
+              <h3>Reforge</h3>
+            </div>
+          </article>
+          <article>
+            <img src="/assets/img/homepage/product-baul.png" alt="Mockup de El Baúl" width="904" height="904">
+            <div>
+              <span>En construcción</span>
+              <small>Aplicación · Utilidad</small>
+              <h3>El Baúl</h3>
+            </div>
+          </article>
+          <article>
+            <img src="/assets/img/homepage/product-leadhub.png" alt="Mockup de LeadHub" width="904" height="904">
+            <div>
+              <span>En construcción</span>
+              <small>Aplicación · Utilidad</small>
+              <h3>LeadHub</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section home-section--texture">
+    <div class="home-shell home-split">
+      <h2><span>Pero todos</span> forman parte del mismo viaje.</h2>
+      <ol class="home-journey">
+        <li><span>01</span><strong>↑</strong>Algunos crecerán.</li>
+        <li class="is-dimmed"><span>02</span><strong>↓</strong>Otros desaparecerán.</li>
+        <li><span>03</span><strong>↑</strong>Y unos pocos quizá terminen convirtiéndose en negocios reales.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="home-section home-section--why">
+    <div class="home-shell home-split home-split--wide">
+      <h2>¿Por qué <span>Ne²</span>?</h2>
+      <div class="home-why">
+        <article>
+          <p class="home-label">i. Origen</p>
+          <h3>Porque durante años nos hemos llamado <span>“Nene”</span>.</h3>
+          <hr>
+          <p class="home-label">ii. Conclusión</p>
+          <h3>Y <span>porque, al final,</span> este estudio no deja de ser eso.</h3>
+        </article>
+        <div class="home-final-card">
+          <p>Dos nenes <span>construyendo cosas</span> juntos.</p>
+        </div>
+        <p class="home-signoff">Como <span>siempre</span> hemos querido.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="home-footer">
+    <div class="home-shell">
+      <div class="home-footer__grid">
+        <div>
+          <a class="home-logo home-logo--footer" href="/" aria-label="Ne2 Studio">
+            <img class="home-logo__mark" src="/assets/img/homepage/logo-mark.svg" alt="" width="63" height="32">
+            <img class="home-logo__text" src="/assets/img/homepage/logo-text.svg" alt="Ne2 Studio" width="79" height="23">
+          </a>
+          <p>Un laboratorio. Dos nenes. Productos que merezcan existir.</p>
+        </div>
+        <div>
+          <h2>Estudio</h2>
+          <p>Jaime — Producto</p>
+          <p>Pedro — Software</p>
+        </div>
+        <div>
+          <h2>Contacto</h2>
+          <p><a href="mailto:hola@ne2.studio">hola@ne2.studio</a></p>
+          <p><a href="https://www.instagram.com/ne2studio/">@ne2studio</a></p>
+        </div>
+      </div>
+      <div class="home-footer__bottom">
+        <span>© Ne² Studio</span>
+        <nav aria-label="Legal">
+          <a href="/legal/legal-notice/">{{ i18n "linklegal" }}</a>
+          <a href="/legal/cookie-policy/">{{ i18n "linkcookiepolicy" }}</a>
+          <a href="/legal/privacy-policy/">{{ i18n "linkprivacypolicy" }}</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</main>
 {{ end }}
