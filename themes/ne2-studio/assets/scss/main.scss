@@ -858,7 +858,7 @@ footer {
   article {
     background: var(--home-bg-card-solid);
     min-height: 296px;
-    padding: 32px;
+    padding: 28px;
   }
 
   p {
@@ -874,10 +874,10 @@ footer {
     font-family: "Gloock", serif;
     font-size: 24px;
     font-weight: 400;
-    letter-spacing: 1px;
+    letter-spacing: 0;
     line-height: 1.05;
     margin: 20px 0;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
   }
 
   span {
