@@ -23,13 +23,11 @@ window.cookieconsent.initialise({
   "onInitialise": function (status) {
     if (status === cookieconsent.status.allow || status === cookieconsent.status.dismiss) {
       if (typeof ne2LoadGTM === "function") ne2LoadGTM();
-      if (typeof ne2LoadMetricool === "function") ne2LoadMetricool();
     }
   },
   "onStatusChange": function (status) {
     if (status === cookieconsent.status.allow || status === cookieconsent.status.dismiss) {
       if (typeof ne2LoadGTM === "function") ne2LoadGTM();
-      if (typeof ne2LoadMetricool === "function") ne2LoadMetricool();
     }
   }
 });
