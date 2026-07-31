@@ -1,15 +1,5 @@
 {{ define "main" }}
-<main class="home-page">
-  <header class="home-header" id="top">
-    <div class="home-shell home-header__inner">
-      <a class="home-logo" href="/" aria-label="Ne2 Studio">
-        <img class="home-logo__mark" src="/assets/img/homepage/logo-mark.svg" alt="" width="63" height="32">
-        <img class="home-logo__text" src="/assets/img/homepage/logo-text.svg" alt="Ne2 Studio" width="79" height="23">
-      </a>
-      <a class="home-header__button" href="#dos-disciplinas">Empezar historia</a>
-    </div>
-  </header>
-
+<main>
   <section class="home-hero" id="historia">
     <div class="home-shell home-hero__inner">
       <h1>Construimos productos digitales <span>que nos gustaría</span> que existieran.</h1>
@@ -271,36 +261,5 @@
     </div>
   </section>
 
-  <footer class="home-footer">
-    <div class="home-shell">
-      <div class="home-footer__grid">
-        <div>
-          <a class="home-logo home-logo--footer" href="/" aria-label="Ne2 Studio">
-            <img class="home-logo__mark" src="/assets/img/homepage/logo-mark.svg" alt="" width="63" height="32">
-            <img class="home-logo__text" src="/assets/img/homepage/logo-text.svg" alt="Ne2 Studio" width="79" height="23">
-          </a>
-          <p>Un laboratorio. Dos nenes. Productos que merezcan existir.</p>
-        </div>
-        <div>
-          <h2>Estudio</h2>
-          <p>Jaime — Producto</p>
-          <p>Pedro — Software</p>
-        </div>
-        <div>
-          <h2>Contacto</h2>
-          <p><a href="mailto:hola@ne2.studio">hola@ne2.studio</a></p>
-          <p><a href="https://www.instagram.com/ne2studio/">@ne2studio</a></p>
-        </div>
-      </div>
-      <div class="home-footer__bottom">
-        <span>© Ne² Studio</span>
-        <nav aria-label="Legal">
-          <a href="/legal/legal-notice/">{{ i18n "linklegal" }}</a>
-          <a href="/legal/cookie-policy/">{{ i18n "linkcookiepolicy" }}</a>
-          <a href="/legal/privacy-policy/">{{ i18n "linkprivacypolicy" }}</a>
-        </nav>
-      </div>
-    </div>
-  </footer>
 </main>
 {{ end }}
