@@ -14,20 +14,24 @@
 <script src="/assets/js/scroll.js"></script>
 <script src="/assets/js/redirect.js"></script>
 
-<!-- Metricool -->
+<!-- Metricool (loaded only after cookie consent, see cookieconsent.html) -->
 {{ if eq (getenv "HUGO_ENV") "production" }}
 <script>
-  function loadScript(a) {
-    var b = document.getElementsByTagName("head")[0],
-      c = document.createElement("script");
-    (c.type = "text/javascript"),
-      (c.src = "https://tracker.metricool.com/resources/be.js"),
-      (c.onreadystatechange = a),
-      (c.onload = a),
-      b.appendChild(c);
+  function ne2LoadMetricool(){
+    if (window.ne2MetricoolLoaded) return;
+    window.ne2MetricoolLoaded = true;
+    function loadScript(a) {
+      var b = document.getElementsByTagName("head")[0],
+        c = document.createElement("script");
+      (c.type = "text/javascript"),
+        (c.src = "https://tracker.metricool.com/resources/be.js"),
+        (c.onreadystatechange = a),
+        (c.onload = a),
+        b.appendChild(c);
+    }
+    loadScript(function () {
+      beTracker.t({ hash: "45d30dfb71957d625ad900e4772a2d6a" });
+    });
   }
-  loadScript(function () {
-    beTracker.t({ hash: "45d30dfb71957d625ad900e4772a2d6a" });
-  });
 </script>
 {{ end }}
