@@ -1564,7 +1564,28 @@ footer {
   ul,
   ol {
     margin: 0 0 20px;
-    padding-left: 24px;
+    padding-left: 22px;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li {
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }
+
+  li::marker {
+    color: var(--home-accent);
+  }
+
+  li:last-child {
+    margin-bottom: 0;
   }
 
   a {
@@ -1579,6 +1600,46 @@ footer {
 
   strong {
     color: var(--home-text);
+  }
+
+  table {
+    border-collapse: collapse;
+    display: block;
+    margin: 0 0 24px;
+    max-width: 100%;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid var(--home-line);
+    padding: 14px 20px 14px 0;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 0;
+  }
+
+  thead th {
+    color: var(--home-accent);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  tbody td {
+    color: var(--home-muted);
+    font-size: 15px;
+  }
+
+  tbody tr:last-child th,
+  tbody tr:last-child td {
+    border-bottom: none;
   }
 }
 
