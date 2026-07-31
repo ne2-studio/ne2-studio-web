@@ -10,6 +10,7 @@ layout: single
 ## Responsable del tratamiento
 
 **Responsable:** Pedro Pardal
+
 **Correo electrónico:** [pedro@ne2.studio](mailto:pedro@ne2.studio)
 
 ## Datos que recopilamos

@@ -12,6 +12,7 @@ layout: "single"
 En cumplimiento de la normativa vigente, se informa de que este sitio web es titularidad de:
 
 **Titular:** Pedro Pardal
+
 **Correo electrónico:** [pedro@ne2.studio](mailto:pedro@ne2.studio)
 
 ## Finalidad del sitio web
