@@ -20,14 +20,6 @@ jobs:
         with:
           submodules: recursive
 
-      - uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: "latest"
-          extended: true
-
-      - name: Build Hugo site
-        run: HUGO_ENV=production hugo --minify --logLevel info
-
       - name: Login to GHCR
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 

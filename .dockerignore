@@ -1,0 +1,20 @@
+# VCS
+.git
+.github
+
+# Hugo build output/cache (rebuilt inside the image)
+public
+resources/_gen
+.hugo_build.lock
+
+# Editor/IDE
+.idea
+.vscode
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Misc
+.editorconfig
+README.md
