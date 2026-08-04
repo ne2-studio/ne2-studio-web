@@ -5,7 +5,7 @@ layout: single
 
 # Política de Privacidad
 
-**Última actualización:** 31 de julio de 2026
+**Última actualización:** 4 de agosto de 2026
 
 ## Responsable del tratamiento
 
