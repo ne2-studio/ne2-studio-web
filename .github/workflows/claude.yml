@@ -42,28 +42,6 @@ jobs:
           additional_permissions: |
             actions: read
 
-          # Custom prompt: read the GitHub issue that triggered this run, implement
-          # the requested change, and open a pull request with the result.
-          prompt: |
-            You were tagged with @claude on a GitHub ${{ github.event_name }} event in ${{ github.repository }}.
-
-            1. Determine the relevant issue or pull request number from the event
-               context and read its full description/comments (e.g. `gh issue view <number>`
-               or `gh pr view <number>`) to understand what is being asked.
-            2. If this is about an open issue (not an existing PR), implement the
-               requested change in the codebase:
-               - Create a new branch off the default branch, e.g.
-                 `claude/issue-<number>-<short-slug>`.
-               - Make the code changes and commit them with a clear, conventional
-                 commit message.
-               - Push the branch and open a pull request with `gh pr create`,
-                 summarizing the change and including `Fixes #<number>` in the body.
-            3. If you were instead tagged on an existing pull request (via a review
-               or PR comment), apply the requested changes directly to that PR's
-               branch and push the update instead of opening a new PR.
-            4. Reply in the original thread with a short summary and a link to the
-               PR you opened or updated.
-
           # Allow Claude to run the git/gh commands needed to create a branch,
           # push commits, and open a pull request.
           claude_args: |
