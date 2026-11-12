@@ -1,6 +1,7 @@
 title: Ne2 Studio
 theme: ne2-studio
 baseURL: https://www.ne2.studio/
+enableRobotsTXT: true
 languageCode: es-es
 defaultContentLanguage: es
 languages:
