@@ -1,35 +1,57 @@
 name: Build and deploy
 
+# Despliega en Cloudflare Pages (proyecto ne2-studio-web, cuenta Ppardalj):
+# push a main -> producción (www.ne2.studio); PR -> preview en <rama>.ne2-studio-web.pages.dev.
 on:
   push:
     branches: [main]
+  pull_request:
 
 permissions:
   contents: read
-  packages: write
+  deployments: write
+  pull-requests: write
 
-env:
-  IMAGE_NAME: ghcr.io/ne2-studio/ne2-studio-web
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # Los PRs desde forks no tienen acceso a los secrets.
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
 
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - name: Login to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.170.1"
+          extended: true
 
-      - name: Build image
-        run: docker build --build-arg BASE_URL=${{ vars.BASE_URL }} -t $IMAGE_NAME:latest .
+      # Hugo >= 0.170 necesita Dart Sass para css.Sass
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
 
-      - name: Push image
-        run: docker push $IMAGE_NAME:latest
+      - name: Build Hugo site
+        # En previews, URLs relativas para que los enlaces no salten a producción.
+        run: HUGO_ENV=production hugo --minify --logLevel info --baseURL "${{ github.event_name == 'pull_request' && '/' || vars.BASE_URL }}"
 
-      - name: Trigger Coolify deploy
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=ne2-studio-web --branch=${{ github.head_ref || github.ref_name }}
+
+      - name: Comment preview URL
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          URL: ${{ steps.deploy.outputs.pages-deployment-alias-url || steps.deploy.outputs.deployment-url }}
         run: |
-          curl -X POST "${{ vars.COOLIFY_WEBHOOK }}" \
-            -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
+          gh pr comment ${{ github.event.pull_request.number }} --edit-last --create-if-none --body "Preview: $URL"
